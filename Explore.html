@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMind - Nature Heals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div id="canvas-container"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="Home.html">Eco<span>Mind</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="Home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Explore.html">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Ai-Companion.html">AI Companion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Feedback.html">Feedback</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <!-- Main Content Wrapper -->
+    <div class="main-content">
+
+    <!-- Explore Page -->
+    <div id="explore" class="page">
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="rotate-in">Explore Nature Therapy</h2>
+                <p style="color: #e0e0e0;">Discover therapeutic activities that connect you with nature and enhance your mental wellbeing.</p>
+            </div>
+            <div class="row">
+                <!-- Forest Bathing -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="activity-card fade-in" style="animation-delay: 0.1s">
+                        <div class="card-img" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' viewBox=\'0 0 400 200\'%3E%3Cdefs%3E%3ClinearGradient id=\'grad1\' x1=\'0%25\' y1=\'0%25\' x2=\'100%25\' y2=\'100%25\'%3E%3Cstop offset=\'0%25\' style=\'stop-color:%2300897B;stop-opacity:1\' /%3E%3Cstop offset=\'100%25\' style=\'stop-color:%230288D1;stop-opacity:1\' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=\'400\' height=\'200\' fill=\'url(%23grad1)\'/%3E%3Cpath d=\'M200,50 L240,120 L280,80 L320,150 L80,150 L120,100 L160,130 Z\' fill=\'%234DB6AC\'/%3E%3Ccircle cx=\'320\' cy=\'50\' r=\'20\' fill=\'%23FFC107\'/%3E%3C/svg%3E');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Forest Bathing</h5>
+                            <p class="card-text">Immerse yourself in the forest atmosphere for mental rejuvenation.</p>
+                            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#forestModal">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ocean Sounds -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="activity-card fade-in" style="animation-delay: 0.2s">
+                        <div class="card-img" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' viewBox=\'0 0 400 200\'%3E%3Cdefs%3E%3ClinearGradient id=\'grad2\' x1=\'0%25\' y1=\'0%25\' x2=\'100%25\' y2=\'100%25\'%3E%3Cstop offset=\'0%25\' style=\'stop-color:%230097A7;stop-opacity:1\' /%3E%3Cstop offset=\'100%25\' style=\'stop-color:%230288D1;stop-opacity:1\' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=\'400\' height=\'200\' fill=\'url(%23grad2)\'/%3E%3Cpath d=\'M0,120 Q50,80 100,120 Q150,160 200,120 Q250,80 300,120 Q350,160 400,120 L400,200 L0,200 Z\' fill=\'%2381D4FA\'/%3E%3Ccircle cx=\'320\' cy=\'50\' r=\'20\' fill=\'%23FFF9C4\'/%3E%3C/svg%3E');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Ocean Sounds</h5>
+                            <p class="card-text">Let the rhythmic sounds of ocean waves calm your mind.</p>
+                            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#oceanModal">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stargazing -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="activity-card fade-in" style="animation-delay: 0.3s">
+                        <div class="card-img" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' viewBox=\'0 0 400 200\'%3E%3Cdefs%3E%3ClinearGradient id=\'grad3\' x1=\'0%25\' y1=\'0%25\' x2=\'100%25\' y2=\'100%25\'%3E%3Cstop offset=\'0%25\' style=\'stop-color:%23006064;stop-opacity:1\' /%3E%3Cstop offset=\'100%25\' style=\'stop-color:%230D47A1;stop-opacity:1\' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=\'400\' height=\'200\' fill=\'url(%23grad3)\'/%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'2\' fill=\'white\'/%3E%3Ccircle cx=\'100\' cy=\'70\' r=\'1\' fill=\'white\'/%3E%3Ccircle cx=\'150\' cy=\'40\' r=\'2\' fill=\'white\'/%3E%3Ccircle cx=\'200\' cy=\'60\' r=\'1\' fill=\'white\'/%3E%3Ccircle cx=\'250\' cy=\'30\' r=\'2\' fill=\'white\'/%3E%3Ccircle cx=\'300\' cy=\'80\' r=\'1\' fill=\'white\'/%3E%3Ccircle cx=\'350\' cy=\'50\' r=\'2\' fill=\'white\'/%3E%3Ccircle cx=\'380\' cy=\'90\' r=\'1\' fill=\'white\'/%3E%3Ccircle cx=\'30\' cy=\'100\' r=\'1\' fill=\'white\'/%3E%3Ccircle cx=\'80\' cy=\'120\' r=\'2\' fill=\'white\'/%3E%3Ccircle cx=\'130\' cy=\'90\' r=\'1\' fill=\'white\'/%3E%3Ccircle cx=\'180\' cy=\'110\' r=\'2\' fill=\'white\'/%3E%3Ccircle cx=\'230\' cy=\'80\' r=\'1\' fill=\'white\'/%3E%3Ccircle cx=\'280\' cy=\'130\' r=\'2\' fill=\'white\'/%3E%3Ccircle cx=\'330\' cy=\'100\' r=\'1\' fill=\'white\'/%3E%3Ccircle cx=\'370\' cy=\'140\' r=\'2\' fill=\'white\'/%3E%3C/svg%3E');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Stargazing</h5>
+                            <p class="card-text">Connect with the cosmos and gain perspective on life's challenges.</p>
+                            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#starModal">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Garden Therapy -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="activity-card fade-in" style="animation-delay: 0.4s">
+                        <div class="card-img" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' viewBox=\'0 0 400 200\'%3E%3Cdefs%3E%3ClinearGradient id=\'grad4\' x1=\'0%25\' y1=\'0%25\' x2=\'100%25\' y2=\'100%25\'%3E%3Cstop offset=\'0%25\' style=\'stop-color:%23E0F7FA;stop-opacity:1\' /%3E%3Cstop offset=\'100%25\' style=\'stop-color:%23B2DFDB;stop-opacity:1\' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=\'400\' height=\'200\' fill=\'url(%23grad4)\'/%3E%3Cpath d=\'M0,150 C100,50 300,250 400,150 L400,200 L0,200 Z\' fill=\'%234DB6AC\'/%3E%3Ccircle cx=\'100\' cy=\'100\' r=\'30\' fill=\'%23FFC107\'/%3E%3Cpath d=\'M150,80 C180,50 220,50 250,80 C280,110 280,150 250,180 C220,210 180,210 150,180 C120,150 120,110 150,80 Z\' fill=\'%23FF8A65\'/%3E%3C/svg%3E');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Garden Therapy</h5>
+                            <p class="card-text">Cultivate mindfulness through the nurturing practice of gardening.</p>
+                            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#gardenModal">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mountain Hiking -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="activity-card fade-in" style="animation-delay: 0.5s">
+                        <div class="card-img" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' viewBox=\'0 0 400 200\'%3E%3Cdefs%3E%3ClinearGradient id=\'grad5\' x1=\'0%25\' y1=\'0%25\' x2=\'100%25\' y2=\'100%25\'%3E%3Cstop offset=\'0%25\' style=\'stop-color:%23B3E5FC;stop-opacity:1\' /%3E%3Cstop offset=\'100%25\' style=\'stop-color:%2381D4FA;stop-opacity:1\' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=\'400\' height=\'200\' fill=\'url(%23grad5)\'/%3E%3Cpath d=\'M0,100 L100,70 L200,120 L300,80 L400,110 L400,200 L0,200 Z\' fill=\'%23795548\'/%3E%3Cpath d=\'M150,70 L170,40 L190,70 Z\' fill=\'%234DB6AC\'/%3E%3Cpath d=\'M220,60 L240,30 L260,60 Z\' fill=\'%234DB6AC\'/%3E%3Cpath d=\'M80,80 L100,50 L120,80 Z\' fill=\'%234DB6AC\'/%3E%3Cpath d=\'M300,90 L320,60 L340,90 Z\' fill=\'%234DB6AC\'/%3E%3C/svg%3E');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Mountain Hiking</h5>
+                            <p class="card-text">Challenge yourself physically while finding mental clarity in mountain landscapes.</p>
+                            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#hikingModal">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desert Meditation -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="activity-card fade-in" style="animation-delay: 0.6s">
+                        <div class="card-img" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' viewBox=\'0 0 400 200\'%3E%3Cdefs%3E%3ClinearGradient id=\'grad6\' x1=\'0%25\' y1=\'0%25\' x2=\'100%25\' y2=\'100%25\'%3E%3Cstop offset=\'0%25\' style=\'stop-color:%23FFE0B2;stop-opacity:1\' /%3E%3Cstop offset=\'100%25\' style=\'stop-color:%23FFCC80;stop-opacity:1\' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=\'400\' height=\'200\' fill=\'url(%23grad6)\'/%3E%3Ccircle cx=\'200\' cy=\'60\' r=\'40\' fill=\'%23FFC107\'/%3E%3Cpath d=\'M0,120 L400,120 L400,200 L0,200 Z\' fill=\'%23FFA000\'/%3E%3C/svg%3E');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Desert Meditation</h5>
+                            <p class="card-text">Find profound silence and clarity in the expansive desert landscape.</p>
+                            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#desertModal">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- Activity Modals -->
+    <div class="modal fade" id="forestModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Forest Bathing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div style="height: 200px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"200\" viewBox=\"0 0 400 200\"><defs><linearGradient id=\"forestGrad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" style=\"stop-color:%2300897B;stop-opacity:1\" /><stop offset=\"100%\" style=\"stop-color:%230288D1;stop-opacity:1\" /></linearGradient></defs><rect width=\"400\" height=\"200\" fill=\"url(%23forestGrad)\"/><path d=\"M50,150 L80,80 L110,150 Z\" fill=\"%234DB6AC\"/><path d=\"M150,150 L180,60 L210,150 Z\" fill=\"%234DB6AC\"/><path d=\"M250,150 L280,70 L310,150 Z\" fill=\"%234DB6AC\"/><path d=\"M350,150 L380,90 L410,150 Z\" fill=\"%234DB6AC\"/></svg>'); background-size: cover; background-position: center; border-radius: 10px;"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>What is Forest Bathing?</h4>
+                            <p>Forest bathing, or "shinrin-yoku," is the Japanese practice of immersing oneself in the forest atmosphere. It's not about exercise but about connecting with nature through our senses.</p>
+                            <h5 class="mt-4">Benefits:</h5>
+                            <ul>
+                                <li>Reduces stress hormone production</li>
+                                <li>Improves mood and feelings of happiness</li>
+                                <li>Increases ability to focus</li>
+                                <li>Accelerates recovery from illness</li>
+                                <li>Boosts immune system functioning</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h5>How to Practice:</h5>
+                        <p>Find a forest or wooded area and walk slowly, without a destination in mind. Engage all your senses - notice the sounds of birds, the smell of earth, the feeling of air on your skin. Spend at least 20 minutes in this mindful state.</p>
+                        <p>For optimal benefits, try to practice forest bathing for 2 hours each month, ideally broken into shorter sessions throughout the month.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="oceanModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ocean Sounds Therapy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div style="height: 200px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"200\" viewBox=\"0 0 400 200\"><defs><linearGradient id=\"oceanGrad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" style=\"stop-color:%230097A7;stop-opacity:1\" /><stop offset=\"100%\" style=\"stop-color:%230288D1;stop-opacity:1\" /></linearGradient></defs><rect width=\"400\" height=\"200\" fill=\"url(%23oceanGrad)\"/><path d=\"M0,120 Q50,80 100,120 Q150,160 200,120 Q250,80 300,120 Q350,160 400,120 L400,200 L0,200 Z\" fill=\"%2381D4FA\"/><circle cx=\"320\" cy=\"50\" r=\"20\" fill=\"%23FFF9C4\"/></svg>'); background-size: cover; background-position: center; border-radius: 10px;"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>The Power of Ocean Sounds</h4>
+                            <p>The rhythmic pattern of ocean waves creates a natural white noise that can calm the mind and induce a meditative state. This sound therapy has been used for centuries to promote relaxation and mental clarity.</p>
+                            <h5 class="mt-4">Benefits:</h5>
+                            <ul>
+                                <li>Reduces anxiety and stress</li>
+                                <li>Improves sleep quality</li>
+                                <li>Enhances focus and concentration</li>
+                                <li>Creates a sense of peace and tranquility</li>
+                                <li>Masks distracting environmental noises</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h5>How to Practice:</h5>
+                        <p>Visit a beach and sit quietly, focusing on the sound of waves. If you can't access the ocean, use recorded ocean sounds through headphones in a quiet space. Close your eyes and synchronize your breathing with the rhythm of the waves.</p>
+                        <p>Practice for 15-30 minutes daily for optimal benefits. Many people find this especially helpful before bedtime or during stressful workdays.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="starModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Stargazing Therapy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div style="height: 200px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"200\" viewBox=\"0 0 400 200\"><defs><linearGradient id=\"starGrad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" style=\"stop-color:%23006064;stop-opacity:1\" /><stop offset=\"100%\" style=\"stop-color:%230D47A1;stop-opacity:1\" /></linearGradient></defs><rect width=\"400\" height=\"200\" fill=\"url(%23starGrad)\"/><circle cx=\"50\" cy=\"50\" r=\"2\" fill=\"white\"/><circle cx=\"100\" cy=\"70\" r=\"1\" fill=\"white\"/><circle cx=\"150\" cy=\"40\" r=\"2\" fill=\"white\"/><circle cx=\"200\" cy=\"60\" r=\"1\" fill=\"white\"/><circle cx=\"250\" cy=\"30\" r=\"2\" fill=\"white\"/><circle cx=\"300\" cy=\"80\" r=\"1\" fill=\"white\"/><circle cx=\"350\" cy=\"50\" r=\"2\" fill=\"white\"/><circle cx=\"380\" cy=\"90\" r=\"1\" fill=\"white\"/><circle cx=\"30\" cy=\"100\" r=\"1\" fill=\"white\"/><circle cx=\"80\" cy=\"120\" r=\"2\" fill=\"white\"/><circle cx=\"130\" cy=\"90\" r=\"1\" fill=\"white\"/><circle cx=\"180\" cy=\"110\" r=\"2\" fill=\"white\"/><circle cx=\"230\" cy=\"80\" r=\"1\" fill=\"white\"/><circle cx=\"280\" cy=\"130\" r=\"2\" fill=\"white\"/><circle cx=\"330\" cy=\"100\" r=\"1\" fill=\"white\"/><circle cx=\"370\" cy=\"140\" r=\"2\" fill=\"white\"/></svg>'); background-size: cover; background-position: center; border-radius: 10px;"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Cosmic Connection</h4>
+                            <p>Stargazing is a profound way to connect with the universe and gain perspective on our place within it. The vastness of space can help put our daily problems into perspective and inspire awe and wonder.</p>
+                            <h5 class="mt-4">Benefits:</h5>
+                            <ul>
+                                <li>Reduces rumination on daily problems</li>
+                                <li>Inspires feelings of awe and wonder</li>
+                                <li>Promotes mindfulness and present-moment awareness</li>
+                                <li>Creates a sense of connection to something larger</li>
+                                <li>Improves night vision and spatial awareness</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h5>How to Practice:</h5>
+                        <p>Find a location away from city lights on a clear night. Lie on your back on a blanket or reclining chair. Allow your eyes to adjust to the darkness (about 20 minutes). Observe the stars without trying to identify constellations - simply take in the vastness and beauty.</p>
+                        <p>For a deeper experience, try asking philosophical questions while gazing: "What matters most in my life?" or "What would I do if I had no limitations?"</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="gardenModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Garden Therapy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div style="height: 200px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"200\" viewBox=\"0 0 400 200\"><defs><linearGradient id=\"gardenGrad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" style=\"stop-color:%23E0F7FA;stop-opacity:1\" /><stop offset=\"100%\" style=\"stop-color:%23B2DFDB;stop-opacity:1\" /></linearGradient></defs><rect width=\"400\" height=\"200\" fill=\"url(%23gardenGrad)\"/><path d=\"M0,150 C100,50 300,250 400,150 L400,200 L0,200 Z\" fill=\"%234DB6AC\"/><circle cx=\"100\" cy=\"100\" r=\"30\" fill=\"%23FFC107\"/><path d=\"M150,80 C180,50 220,50 250,80 C280,110 280,150 250,180 C220,210 180,210 150,180 C120,150 120,110 150,80 Z\" fill=\"%23FF8A65\"/></svg>'); background-size: cover; background-position: center; border-radius: 10px;"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Healing Through Growing</h4>
+                            <p>Garden therapy, or horticultural therapy, uses plant-based activities to improve mental and physical health. The act of nurturing plants provides a sense of purpose and connection to the natural growth cycle.</p>
+                            <h5 class="mt-4">Benefits:</h5>
+                            <ul>
+                                <li>Reduces symptoms of depression and anxiety</li>
+                                <li>Improves attention and concentration</li>
+                                <li>Develops patience and nurturing qualities</li>
+                                <li>Provides physical exercise and vitamin D exposure</li>
+                                <li>Creates a sense of accomplishment and purpose</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h5>How to Practice:</h5>
+                        <p>Start small with a few potted plants if you don't have garden space. Choose plants that engage multiple senses - fragrant herbs, colorful flowers, or vegetables with interesting textures. Set aside time to mindfully tend to your plants, focusing completely on the task at hand.</p>
+                        <p>Keep a garden journal to track growth and your emotional responses. Even 10 minutes of gardening daily can provide significant mental health benefits.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="hikingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mountain Hiking Therapy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div style="height: 200px; background-image: url('data:image/svg+xml '';utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"200\" viewBox=\"0 0 400 200\"><defs><linearGradient id=\"hikeGrad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" style=\"stop-color:%23B3E5FC;stop-opacity:1\" /><stop offset=\"100%\" style=\"stop-color:%2381D4FA;stop-opacity:1\" /></linearGradient></defs><rect width=\"400\" height=\"200\" fill=\"url(%23hikeGrad)\"/><path d=\"M0,100 L100,70 L200,120 L300,80 L400,110 L400,200 L0,200 Z\" fill=\"%23795548\"/><path d=\"M150,70 L170,40 L190,70 Z\" fill=\"%234DB6AC\"/><path d=\"M220,60 L240,30 L260,60 Z\" fill=\"%234DB6AC\"/><path d=\"M80,80 L100,50 L120,80 Z\" fill=\"%234DB6AC\"/><path d=\"M300,90 L320,60 L340,90 Z\" fill=\"%234DB6AC\"/></svg>'); background-size: cover; background-position: center; border-radius: 10px;"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Elevation of Mind and Body</h4>
+                            <p>Mountain hiking combines physical exertion with exposure to pristine natural environments, creating a powerful therapeutic effect. The journey upward serves as both literal and metaphorical progress.</p>
+                            <h5 class="mt-4">Benefits:</h5>
+                            <ul>
+                                <li>Releases endorphins through physical activity</li>
+                                <li>Provides a sense of achievement and self-efficacy</li>
+                                <li>Improves cardiovascular health and fitness</li>
+                                <li>Creates mental space away from daily stressors</li>
+                                <li>Offers perspective through panoramic views</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h5>How to Practice:</h5>
+                        <p>Start with trails appropriate to your fitness level. Pack essentials like water, snacks, and appropriate clothing. While hiking, practice mindful walking by focusing on each step, your breathing, and the sensations in your body.</p>
+                        <p>Take breaks to fully absorb your surroundings. At the summit or a viewpoint, spend time in quiet contemplation before beginning your descent. Consider hiking without technology to fully disconnect.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="desertModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Desert Meditation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div style="height: 200px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"200\" viewBox=\"0 0 400 200\"><defs><linearGradient id=\"desertGrad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" style=\"stop-color:%23FFE0B2;stop-opacity:1\" /><stop offset=\"100%\" style=\"stop-color:%23FFCC80;stop-opacity:1\" /></linearGradient></defs><rect width=\"400\" height=\"200\" fill=\"url(%23desertGrad)\"/><circle cx=\"200\" cy=\"60\" r=\"40\" fill=\"%23FFC107\"/><path d=\"M0,120 L400,120 L400,200 L0,200 Z\" fill=\"%23FFA000\"/></svg>'); background-size: cover; background-position: center; border-radius: 10px;"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Clarity in Simplicity</h4>
+                            <p>Desert landscapes offer a unique therapeutic environment characterized by vast open spaces, minimal distractions, and profound silence. The stark beauty of deserts can facilitate deep introspection and mental clarity.</p>
+                            <h5 class="mt-4">Benefits:</h5>
+                            <ul>
+                                <li>Promotes deep silence and inner listening</li>
+                                <li>Reduces sensory overload and mental clutter</li>
+                                <li>Encourages simplicity and minimalism in thinking</li>
+                                <li>Creates space for profound insights and realizations</li>
+                                <li>Connects us to ancient landscapes and timelessness</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h5>How to Practice:</h5>
+                        <p>Visit a desert landscape during cooler hours (early morning or evening). Find a comfortable spot to sit and begin with 5-10 minutes of silent observation. Notice the subtle colors, textures, and life forms that exist in this seemingly barren environment.</p>
+                        <p>Practice a "vastness meditation" by gazing at the horizon and allowing your mind to expand to match the spaciousness around you. Consider what non-essential thoughts and worries you can release into this expansive space.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-logo">Eco<span>Mind</span></div>
+                    <p class="footer-text">Connecting humans with nature for better mental health and wellbeing. Our science-backed approach helps you find peace through natural environments.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Pages</h5>
+                        <ul>
+                            <li><a href="#" data-page="home">Home</a></li>
+                            <li><a href="#" data-page="explore">Explore</a></li>
+                            <li><a href="#" data-page="ai-companion">AI Companion</a></li>
+                            <li><a href="#" data-page="feedback">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Resources</h5>
+                        <ul>
+                            <li><a href="#">Nature Therapy Guide</a></li>
+                            <li><a href="#">Scientific Research</a></li>
+                            <li><a href="#">Mental Health Tips</a></li>
+                            <li><a href="#">Outdoor Activities</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact</h5>
+                        <ul>
+                            <li><a href="mailto:info@ecomind.com">info@ecomind.com</a></li>
+                            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                            <li><a href="#">123 Nature Way, Green City</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 EcoMind. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Main.js"></script>
+</body>
+</html>
