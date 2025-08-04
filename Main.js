@@ -29,7 +29,7 @@ if (wellnessForm && formAlert && feedbackResults && feedbackItems) {
 
         // ✅ Send to backend
         try {
-            const response = await fetch('eco-mind-beckend-production.up.railway.app/api/feedback', {
+            const response = await fetch('https://eco-mind-backend-production.up.railway.app/api/feedback', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
